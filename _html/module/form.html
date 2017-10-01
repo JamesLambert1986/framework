@@ -1,0 +1,58 @@
+<!-- DATA -->
+{
+	"form_id": "form1",
+	"form_title": "form",
+	"form_type": ["contact"],
+	"form_introduction": "Send This Message",
+	"form_completed_message": "Thankyou for submitting this form.",
+	"form_recipient": "phill@gardiner-richardson.com",
+	"form_subject": "Website Enquiry",
+	"_completed": "",
+	"elements": {
+		"_type": "element_group",
+		"_name": "elements",
+		"_allowed_elements": ["input","textarea"],
+		"_elements": [
+			{
+				"_type": "element",
+				"_name": "input"
+			}
+		]
+	},
+	"submit": {
+		"_type": "element",
+		"_name": "button"
+	}
+}
+<!-- ENDDATA -->
+<form action="[Var:action]" method="post" id="[Var:form_id]">
+
+
+	<input type="hidden" name="form" id="form" value="true" />
+	<input type="hidden" name="form_id" id="form_id" value="[Var:form_id]" />
+	<input type="hidden" name="form_type" id="form_type" value="[Var:form_type]" />
+
+	<!-- IF:form_title -->
+	<h2>[Var:form_title]</h2>
+	<!-- ENDIF:form_title -->
+	
+	<!-- IF:_completed -->
+		<div class="completed">[Var:form_completed_message]</div>
+	<!-- ELSE:_completed -->
+
+	<!-- IF:intro -->
+	<p clas="intro">[Var:form_introduction]</p>
+	<!-- ENDIF:intro -->
+	
+	<!-- IF:_error_msg --><p class="input__msg">[Var:_error_msg]</p><!-- ENDIF:_error_msg -->
+
+	<div class="fields">
+		
+		[Var:elements]
+	</div>
+		
+		[Var:submit]
+	
+	<!-- ENDIF:_completed -->
+	
+</form>

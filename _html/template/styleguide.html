@@ -1,0 +1,493 @@
+<!-- DATA -->
+{
+	"_cache": "24"
+}
+<!-- ENDDATA -->
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+   	<!-- IF:framework_content -->
+    <title>Framework</title>
+    <!-- ELSE:framework_content -->
+    <title>[Var:site_title] Styleguide</title>
+    <!-- ENDIF:framework_content -->
+    [meta]
+    
+    <link href="[Var:path_assets]scss/styles.css?cache=[Var:_cache]" media="screen" type="text/css" rel="stylesheet" />
+        
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '[Var:site_google_analytics]', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+    
+    
+</head>
+<body class="page--styleguide" id="top">
+
+	<!-- IF:framework_content -->
+	<div class="container framework_content">
+		[Var:framework_content]
+	</div>
+	
+	<!-- ELSE:framework_content -->
+	<div class="container">
+	
+		<!-- IF:_logo -->
+		<span class="styleguide__title--small">Styleguide for</span>
+		<div class="wrapper">[Var:_logo]</div>
+		<!-- ELSE:_logo -->
+		<span class="styleguide__title">Styleguide for [Var:site_title]</span>
+		<!-- ENDIF:_logo -->
+	</div>
+	
+	<!-- ENDIF:framework_content -->
+	
+	<style>
+		
+		.framework_content h1 {
+			color: [Var:_style->colour->first];
+		}
+		
+		.styleguide__title,
+		.styleguide__title--small,
+		.styleguide__heading,
+		.styleguide__heading--second {
+			font-family: 'Arial';
+		}
+		
+		.styleguide__title--small {
+			
+			display: block;
+			font-size: 1.5rem;
+			line-height: 1.5;
+			margin-top: 2rem;
+			margin-bottom: 0;
+			color: #d4d4d4;
+		}
+		
+		.styleguide__title--small + * {
+			margin-bottom: 4rem;
+			color: [Var:_style->colour->first];
+			fill: [Var:_style->colour->first];
+		}
+		
+		.styleguide__title--small + svg {
+			
+			width: calc(100% - 1rem);
+			height: 6rem;
+			margin-bottom: 2rem;
+			color: [Var:_style->colour->first];
+			fill: [Var:_style->colour->first];
+		}
+		
+		.styleguide__title {
+			display: block;
+			font-size: 4.5rem;
+			line-height: 5rem;
+			margin-top: 4rem;
+			margin-bottom: 4rem;
+			color: [Var:_style->colour->first];
+		}
+		.styleguide__heading {
+			display: block;
+			font-size: 3.5rem;
+			line-height: 4rem;
+			margin-top: 1rem;
+			margin-bottom: 3rem;
+			
+			color: #a2a0a0;
+		}
+		.styleguide__heading--second {
+			
+			color: #d4d4d4;
+			display: block;
+			font-size: 2.5rem;
+			line-height: 3rem;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+		}
+	</style>
+	
+	<!-- ----------------------------------------- COLOURS -------------------------------------------- -->
+	<div class="container">
+	
+		<span class="styleguide__heading">Colours</span>
+		<!-- FOREACH:colours -->
+
+		<div class="styleguide__colour [Var:class]">
+			<span class="colour__value" style="background-color: [Var:value]"></span>
+			<span class="colour__title">[Var:title]<br />[Var:value]</span>
+		</div>
+		<!-- ENDFOREACH:colours -->
+
+		<style>
+
+			.styleguide__colour {
+
+				margin-bottom: 2em;
+				float: left;
+			}
+
+			.styleguide__colour .colour__value {
+
+				width: 7.8em;
+				height: 7.8em;
+				margin-bottom: 0.5em;
+				display: inline-block;
+			}
+
+			.styleguide__colour.light .colour__value {
+				border: 1px solid black;
+			}
+
+			.styleguide__colour .colour__title {
+				display: block;
+				text-align: center;
+				font-size: 1.2em;
+			}
+		</style>
+		
+	
+		
+	</div>	
+		
+	<!-- ----------------------------------------- GRID -------------------------------------------- -->
+	<div class="container">
+		
+		<span class="styleguide__heading">Grid</span>
+		<p></p>
+	</div>
+	<div class="container styleguide__grid">
+		<!-- FOREACH:grid -->
+		[Var:html]
+		<!-- ENDFOREACH:grid -->
+	</div>
+		
+	<style>
+		.styleguide__grid > * {
+			height: 8em;
+			position: relative;
+			border-right: 1px dashed black;
+		}
+		
+		.styleguide__grid > *:first-child {
+			
+			border-left: 1px dashed black;
+		}
+		
+		.styleguide__grid > *:before {
+			
+			content: " ";
+			background: grey;
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+		
+		
+	<!-- ----------------------------------------- TYPOGRAPHY -------------------------------------------- -->
+	<div class="container">
+		<br/>
+		<br/>
+		<span class="styleguide__heading">Typography</span>
+	</div>
+	
+	
+	
+	
+	
+	<div class="container styleguide__fonts">
+	
+		<!-- FOREACH:font -->
+		
+		<div class="med--3">[Var:html]</div>
+		
+		<!-- ENDFOREACH:font -->
+	
+	</div>
+		
+	<style>
+		
+		.styleguide__font {
+			
+			display: block;
+			margin-bottom: 4rem;
+		}
+		
+		
+		.styleguide__font__title {
+			
+			display: block;
+			margin-bottom: 2rem;
+			font-size: 2rem;
+		}
+		
+		
+		.styleguide__font__sample {
+			
+			display: block;
+			margin-bottom: 1rem;
+			font-size: 3rem;
+		}
+		
+	</style>
+		
+	
+	
+	<div class="container styleguide__type">
+		<!-- TO DO: use element.html files -->
+		<h1>H1 - Heading 1</h1>
+		<h2>H2 - Heading 2</h2>
+		<h3>H3 - Heading 3</h3>
+		<h4>H4 - Heading 4</h4>
+		<h5>H5 - Heading 5</h5>
+		<h6>H6 - Heading 6</h6>
+		
+		<p class="intro">Parapgh - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+		<p>Parapgh - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+		<small>Copyright text</small>
+		
+		<blockquote><p>What we have here is a quotation from another source.</p><cite>The Source</cite></blockquote>
+		
+		<ul>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3 - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
+			<li>List item 4</li>
+		</ul>
+		
+		<ol>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+			<li>List item 4</li>
+		</ol>
+	</div>
+		
+	<style>
+		
+		.styleguide__type {
+			
+			background: -webkit-repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 1em, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 2em);
+    		background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 1em, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 2em);
+
+		}
+		
+	</style>
+		
+	
+	<!-- ----------------------------------------- ICONS -------------------------------------------- -->
+	<div class="container">
+		<br/>
+		<br/>
+		<span class="styleguide__heading">SVG Icons</span>
+		
+		<div class="styleguide__svgs">
+			[Var:svg]
+		</div>
+		
+		
+	</div>
+   <style>
+		
+	   .styleguide__svgs {
+		   overflow: hidden;
+		   margin-bottom: 2rem;
+	   }
+		
+		.styleguide__svgs svg {
+			
+			float: left;
+			width: 5rem;
+			height: 5rem;
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			
+			background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" sversion="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px" width="100%" height="100%" preserveAspectRatio="xMidYMax meet"><rect x="2" y="2" width="28" height="28" stroke="#acac9d" stroke-width="1" vector-effect="non-scaling-stroke" fill="none"/><rect x="6" y="6" width="20" height="20" stroke="#acac9d" stroke-width="1" vector-effect="non-scaling-stroke" fill="none"/><path id="Ellipse" d="M 2 16 C 2 8.2679 8.2679 2 16 2 C 23.7321 2 30 8.2679 30 16 C 30 23.7321 23.7321 30 16 30 C 8.2679 30 2 23.7321 2 16 Z" stroke="#acac9d" stroke-width="1" vector-effect="non-scaling-stroke" fill="none"/></svg>');
+			background-repeat: no-repeat;
+    		background-position: 50% 50%;
+			
+		}
+		
+	</style>
+	
+	<!-- ----------------------------------------- FORM -------------------------------------------- -->
+
+	<div class="container">
+
+		<span class="styleguide__heading">Form Fields</span>
+		
+		<div class="med--4">
+			
+		[Var:form]
+		</div>
+		
+		
+		
+	</div>
+	
+	
+	<!-- ----------------------------------------- TABLE ------------------------------------------- -->
+
+	<div class="container">
+		
+		<span class="styleguide__heading">Table</span>
+		
+		<div class="lrg--10">
+			<div class="table__wrapper">
+			<table>
+				<tr>
+					<th>Heading 1</th>
+					<th>Heading 2</th>
+					<th>Heading 3</th>
+					<th>Heading 4</th>
+					<th>Heading 5</th>
+					<th>Heading 6</th>
+				</tr>
+				<tr>
+					<td>Col 1</td>
+					<td>Col 2</td>
+					<td>Col 3</td>
+					<td>Col 4</td>
+					<td>Col 5</td>
+					<td>Col 6</td>
+				</tr>
+				<tr>
+					<td>Col 1</td>
+					<td>Col 2</td>
+					<td>Col 3</td>
+					<td>Col 4</td>
+					<td>Col 5</td>
+					<td>Col 6</td>
+				</tr>
+				<tr>
+					<td>Col 1</td>
+					<td>Col 2</td>
+					<td>Col 3</td>
+					<td>Col 4</td>
+					<td>Col 5</td>
+					<td>Col 6</td>
+				</tr>
+				<tr>
+					<td>Col 1</td>
+					<td>Col 2</td>
+					<td>Col 3</td>
+					<td>Col 4</td>
+					<td>Col 5</td>
+					<td>Col 6</td>
+				</tr>
+				<tr>
+					<td>Col 1</td>
+					<td>Col 2</td>
+					<td>Col 3</td>
+					<td>Col 4</td>
+					<td>Col 5</td>
+					<td>Col 6</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+  
+	<!-- ----------------------------------------- MEDIA -------------------------------------------- -->
+
+	<div class="container">
+		<br/>
+		<br/>
+		<span class="styleguide__heading">Media</span>
+	</div>
+   
+   	
+	<div class="container">
+		[Var:media]
+	</div>
+   
+	<!-- ----------------------------------------- MODULES -------------------------------------------- -->
+	<div class="container">
+		<br/>
+		<br/>
+		<span class="styleguide__heading">Modules</span>
+	</div>
+  
+  	<!-- FOREACH:modules -->
+  	<div class="container">
+		<span class="styleguide__heading--second">[Var:title]</span>
+	</div>
+  	
+  	[Var:html]
+  	
+		<br/>
+		<br/>
+  	<!-- ENDFOREACH:modules -->
+  
+  
+   	<!-- IF:codepen_links -->
+	<div class="container codepen_links">
+		[Var:codepen_links]
+	</div>
+   	<!-- ENDIF:codepen_links -->
+	
+	<style>
+		
+	   .styleguide__codepen_link {
+		   
+		   float: left;
+		   height: 10rem;
+		   width: 100%;
+		   margin-bottom: 2rem;
+		   position: relative;
+	   }
+		
+	   .styleguide__codepen_link a {
+		   position: absolute;
+		   top: 0;
+		   lefT: 0;
+		   width: 100%;
+		   height: 100%;
+		   background: #a2a0a0;
+		}
+		
+	   .styleguide__codepen_link a span{
+		   
+		   color: white;
+		   text-align: center;
+		   font-size: 2rem;
+		   line-height: 1;
+		   position: absolute;
+		   top: 50%;
+		   left: 50%;
+		      -webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+	   }
+		
+	</style>
+	
+	
+	
+	
+   
+    <script src='[Var:path_assets]js/_jquery/[Var:_jquery]'></script>
+    <script src="[Var:path_assets]js/scripts.js?cache=[Var:_cache]"></script>
+	
+
+</body>
+</html>

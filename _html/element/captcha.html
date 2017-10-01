@@ -1,0 +1,22 @@
+<!-- DATA -->
+{
+	"id": "chapcha",
+	"label": "Please enter the code exactly as you see it in the image below :-<br />",
+	"placeholder": "",
+	"prefix": "",
+	"attr": {
+		"data-validation":"required"
+	},
+	"_error_msg": ""
+}
+<!-- ENDDATA -->
+
+<!-- IF:label --><label for="[Var:id]">[Var:label]</label><!-- ENDIF:label -->
+
+<div class="captcha__wrapper input__wrapper">
+
+	<img src="[Var:path_assets]img/captcha.php?prefix=[Var:prefix]" class="nofigure" alt="verify code" />
+	<input id="[Var:id]" name="[Var:id]" type="text" value="" placeholder="[Var:placeholder]" [attr] />
+
+	<!-- IF:_error_msg --><span class="input__msg">[Var:error_msg]</span><!-- ENDIF:_error_msg -->
+</div>

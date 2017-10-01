@@ -1,0 +1,15 @@
+nav {
+	
+	ul {
+		
+		li:before {
+			display: none;
+		}
+        
+		li {
+			float: left;
+			padding-right: 1rem;
+            padding-left: 0;
+		}
+	}
+}

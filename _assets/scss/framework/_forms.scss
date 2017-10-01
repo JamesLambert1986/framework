@@ -1,0 +1,247 @@
+/* input message style */
+.input__msg
+{
+	display: none;
+}
+
+.error textarea,
+.error input
+{
+	color: red;
+	border-color: red;
+}
+
+.success textarea,
+.success input
+{
+	color: green;
+	border-color: green;
+}
+
+.error .input__msg,
+.success .input__msg
+{
+	display: block;
+	color: red;
+
+	clear:both;
+	@include typo(16,24);
+	margin-bottom: em($grid-spacing,16);
+	margin-top: em(-$grid-spacing,16);
+}
+
+.success .input__msg
+{
+	color: green;
+}
+
+
+
+/* form element styles */
+label
+{
+	width: 100%;
+	display: block;
+	@include typo(16);
+	margin-bottom: em($grid-spacing,16);
+}
+
+textarea,
+select,
+input
+{
+	width: 100%;
+	display: block;
+
+	font-size: em(16);
+	height: em(36,16);
+	line-height: em(36,16);
+
+	padding: 0;
+	padding-left: em($gutter/2);
+	padding-right: em($gutter/2);
+
+	margin-bottom: em($grid-spacing,16);
+
+	border: 1px solid $colour-grey;
+	background: #ffffff;
+
+	border-radius: 0;
+
+	label + &
+	{
+		margin-top: em(-$grid-spacing,16);
+	}
+}
+
+textarea
+{
+	min-height: em(3 * $grid-spacing, 16);
+	min-width: 100%;
+	max-width: 100%;
+	max-height: em(10 * $grid-spacing, 16);
+}
+
+.input__wrapper
+{
+	position: relative;
+
+	label + &
+	{
+		margin-top: em(-$grid-spacing);
+	}
+
+	svg
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: em(36);
+		height: em(36);
+
+		padding: 0.5em;
+		background: grey;
+		border: 1px solid $colour-grey;
+	}
+
+	svg + input
+	{
+		padding-left: em(36 + ($gutter/2),16);
+	}
+
+	&.icon_right svg
+	{
+		left: auto;
+		right: 0;
+	}
+
+	&.icon_right svg + input
+	{
+		padding-left: em($gutter/2);
+		padding-right: em(36 + ($gutter/2),16);
+	}
+}
+
+.select__wrapper
+{
+	margin-bottom: em($grid-spacing);
+	position: relative;
+
+	select
+	{
+		background: transparent;
+		border: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		margin: 0;
+		border: 1px solid black;
+		margin-bottom: em($grid-spacing,16);
+	}
+
+	&.error select
+	{
+		color: red;
+		border-color: red;
+	}
+
+	&.error select + .input__msg
+	{
+		display: block;
+		color: red;
+
+		@include typo(16,24);
+	}
+
+	select::-ms-expand /* for IE 11 */
+	{
+		display: none;
+	}
+
+	label + &
+	{
+		margin-top: em(-$grid-spacing);
+	}
+}
+
+.input__wrapper,
+.select__wrapper
+{
+	svg
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: em(36);
+		height: em(36);
+
+		padding: 0.5em;
+		background: grey;
+		border: 1px solid black;
+	}
+
+	svg + select
+	{
+		padding-left: em(36 + ($gutter/2),16);
+	}
+
+	&.icon_right svg
+	{
+		left: auto;
+		right: 0;
+	}
+
+	&.icon_right svg + select
+	{
+		padding-left: em($gutter/2);
+		padding-right: em(36 + ($gutter/2),16);
+	}
+}
+
+.checkbox__group,
+.radio__group
+{
+
+	margin-bottom: rem($grid-spacing);
+
+	> label
+	{
+		margin-bottom: 0;
+		font-weight: bold;
+	}
+
+	.checkbox__group__option,
+	.radio__group__option
+	{
+		display: block;
+		overflow: hidden;
+	}
+
+
+	.checkbox__group__option input,
+	.radio__group__option input
+	{
+		font-size: 1em;
+		@include typo(16);
+		width: auto;
+		float: left;
+		margin-bottom: 0;
+	}
+
+	.checkbox__group__option label,
+	.radio__group__option label
+	{
+		float: left;
+		width: auto;
+		padding-left: 0.5em;
+		margin-bottom: 0;
+	}
+}
+
+.checkbox__text {
+	display: none;
+}
+
+input:checked + .checkbox__text {
+	display: block;
+}

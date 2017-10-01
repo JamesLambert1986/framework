@@ -1,0 +1,45 @@
+<!-- DATA -->
+{
+	"id": "checkbox_group",
+	"label": "Checkbox List",
+	"options": {
+		"_type": "loop",
+		"_name": "options",
+		"_fields": {
+			"value": "",
+			"title": ""
+		},
+		"_items" : [
+			{
+				"title": "checkboxlist one",
+				"value": "1",
+				"attr": {
+					"data-validation": "checkbox_group",
+					"data-validation-qty": "min1"
+				}
+			},
+			{
+				"title": "checkboxlist two",
+				"value": "2"
+			}
+		]
+	},
+	"_validation": "",
+	"_error_msg": ""
+}
+<!-- ENDDATA -->
+
+<div class="checkbox__group [Var:_validation]">
+	
+	<!-- IF:label --><label for="[Var:id]">[Var:label]</label><!-- ENDIF:label -->
+
+	<!-- FOREACH:options->_items -->
+		<span class="checkbox__group__option"><input id="[Var:id]_[Var:value]" name="[Var:id][]" value="[Var:value]" type="checkbox" [attr] /><!--
+		--><label for="[Var:id]_[Var:value]">[Var:value]</label></span>
+	<!-- ENDFOREACH:options->_items -->
+	
+	<!-- IF:_validation -->
+	<!-- IF:_error_msg --><span class="input__msg">[Var:_error_msg]</span><!-- ENDIF:_error_msg -->
+	<!-- ENDIF:_validation -->
+	
+</div>

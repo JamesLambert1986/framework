@@ -1,0 +1,17 @@
+
+.svg--reference {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+// Things that should never be shown
+nav {
+	display: none;
+}
+
+
+h1[hidden] {
+	display: block!important;
+}

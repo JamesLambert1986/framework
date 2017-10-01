@@ -1,0 +1,29 @@
+<!-- DATA -->
+{
+	"id": "input1",
+	"label": "Text Input",
+	"type": ["text","date","email","password"],
+	"placeholder": "",
+	"icon": ["none","email"],
+	"icon_position": ["left","right"],
+	"required": ["yes","no"],
+	"_value": "",
+	"_validation": "",
+	"_error_msg": ""
+}
+<!-- ENDDATA -->
+
+<!-- IF:label --><label for="[Var:id]">[Var:label]</label><!-- ENDIF:label -->
+
+<div class="input__wrapper icon_[Var:icon_position] [Var:class]">
+	
+	<!-- IF:icon!=none -->
+	<svg>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="[Var:path_assets]/svg/vectors.svg#[Var:icon]"></use>
+	</svg>
+	<!-- ENDIF:icon -->
+
+	<input id="[Var:id]" name="[Var:id]" type="[Var:type]" value="[Var:_value]" placeholder="[Var:placeholder]" [attr] />
+    
+	<!-- IF:_error_msg --><span class="input__msg">[Var:_error_msg]</span><!-- ENDIF:_error_msg -->
+</div>

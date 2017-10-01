@@ -1,0 +1,56 @@
+<!-- DATA -->
+{
+	"id": "radio_group",
+	"label": "Radio Group",
+	"options": {
+		"_type": "loop",
+		"_name": "options",
+		"_fields": {
+			"value": "",
+			"title": ""
+		},
+		"_items" : [
+			{
+				"value": "1",
+				"title": "Item 1",
+				"attr": {
+					"checkbox": "true"
+				}
+			},
+			{
+				"value": "2",
+				"title": "Item 2"
+			},
+			{
+				"value": "3",
+				"title": "Item 3"
+			},
+			{
+				"value": "4",
+				"title": "Item 4"
+			}
+		]
+	},
+	"_validation": "",
+	"_error_msg": ""
+}
+<!-- ENDDATA -->
+
+<div class="radio__group [Var:_validation]">
+	
+	<!-- IF:label --><label for="[Var:id]">[Var:label]</label><!-- ENDIF:label -->
+	
+	<!-- FOREACH:options->_items -->
+		<span class="radio__group__option"><input id="[Var:id]_[Var:value]" name="[Var:id]" type="radio" value="[Var:value]" [attr] /><!-- 
+		--><label for="[Var:id]_[Var:value]">[Var:title]</label></span>
+	<!-- ENDFOREACH:options->_items -->
+	
+	<!-- IF:_validation -->
+	<!-- IF:_error_msg --><span class="input__msg">[Var:_error_msg]</span><!-- ENDIF:_error_msg -->
+	<!-- ENDIF:_validation -->
+	
+</div>
+
+
+
+

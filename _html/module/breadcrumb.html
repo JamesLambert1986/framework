@@ -1,0 +1,33 @@
+<!-- DATA -->
+{
+	"pages": [
+		{
+			"title": "First level",
+			"href": "#page"
+		},
+		{
+			"title": "Second level",
+			"href": "#page"
+		},
+		{
+			"title": "Third level",
+			"href": "#page"
+		}
+	]
+}
+<!-- ENDDATA -->
+
+<div class="breadcrumb">
+	
+	<p>
+	<a href="[Var:path_root]" class="home" title="[Var:site_title]" rel="home">
+	<svg data-svg-id="home"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="[Var:path_assets]svg/vectors.svg?cache=[Var:_cache]#home"></use></svg>
+	</a>
+	
+	<!-- FOREACH:pages -->
+		<span class="seperator"> - </span>
+		<a href="[Var:href]" title="[Var:title]">[Var:title]</a>
+		
+	<!-- ENDFOREACH:pages -->
+	</p>
+</div>

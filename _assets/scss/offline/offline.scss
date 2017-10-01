@@ -1,0 +1,13 @@
+body {
+	background: $colour-first;
+}
+
+.offline__wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	@include prefix(transform,translate(-50%,-50%));
+	
+	text-align: center;
+}

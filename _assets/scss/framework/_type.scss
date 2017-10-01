@@ -1,0 +1,301 @@
+html
+{
+    //font-family: sans-serif;
+    font-size: 12px;
+}
+
+/* Make sure elements are inheriting font family */
+button,
+input,
+select,
+textarea
+{
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p,
+.p,
+ul,
+ol,
+cite,
+small,
+address,
+.heading__label
+{
+    @include typo(16);
+    margin-top: 0;
+    margin-bottom: rem($grid-spacing);
+    // overflow: visible !important;
+    display: inline-block;
+    width: 100%;
+    font-weight: normal;
+
+    .container > &
+	{
+        width: calc(100% - #{rem($gutter)});
+    }
+}
+
+
+h1,
+.h1
+{
+    @include typo(36);
+    font-weight: bold;
+	
+	@include breakpoint(med)
+	{
+		@include typo(65);
+	}
+}
+
+h2,
+.h2
+{
+    @include typo(25);
+    font-weight: bold;
+	
+	@include breakpoint(med)
+	{
+		@include typo(50);
+	}
+}
+
+h3,
+h4,
+h5,
+h6
+{
+    font-weight: bold;
+    @include typo(30);
+}
+
+ul,
+ol,
+p,
+.p,
+address
+{
+    @include typo(16,24);
+}
+
+p.intro
+{
+    font-weight: bold;
+    @include typo(24,36);
+}
+
+
+@include breakpoint(med)
+{
+	ul,
+	ol,
+    p,
+	.p,
+	address
+	{
+        @include typo(20);
+    }
+}
+
+blockquote
+{
+    quotes: "\201C""\201D""\2018""\2019";
+    margin: 0;
+    margin-bottom: em($type-spacing);
+	
+    p
+	{
+        margin-bottom: 0;
+
+        &:before
+		{
+            content: open-quote;
+        }
+		
+		&:after
+		{
+            content: close-quote;
+        }
+    }
+	
+    cite
+	{
+        font-style: normal;
+        margin-bottom: 0;
+		
+        &:before
+		{
+            content: "- ";
+        }
+    }
+	
+}
+
+small
+{
+    @include typo(12);
+    margin-bottom: em($type-spacing,12);
+}
+
+ul
+{
+	list-style: none;
+    padding: 0;
+	
+    li
+	{
+        list-style: none;
+        float: inherit;
+        position: relative;
+        padding-left: 1.5em;
+    }
+    
+    li:before
+	{
+        content: "\2022";
+        width: 1.5em;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+	li ul li:before {
+		width: 1em;
+	}
+	
+	&.no_bullets
+	{
+        li
+		{
+            padding-left: 0;
+        }
+        
+		li:before
+		{
+			display: none;
+		}
+	}
+}
+
+ol
+{
+    counter-reset: ol;
+    padding-left: 0;
+    
+    li
+	{
+        list-style: none;
+        position: relative;
+        padding-left: 1.5em;
+    }
+    
+    li:before
+	{
+        counter-increment: ol;
+        content: counter(ol) ". ";
+        
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+	
+	ol
+	{
+		counter-reset: ol_level2;
+		
+		li {
+			padding-left: 2.5em;
+		}
+		
+		li:before
+		{
+			counter-increment: ol_level2;
+			content: counter(ol) "." counter(ol_level2) ". ";
+			width: 2.5em;
+			display: inline-block;
+		}
+
+		ol
+		{
+			counter-reset: ol_level3;
+			padding-left: 1em;
+
+			li:before
+			{
+				counter-increment: ol_level3;
+				content: counter(ol) "." counter(ol_level2) "." counter(ol_level3) ". ";
+				width: 3em;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+ul ul, ol ol
+{
+	font-size:1em;
+}
+
+a
+{
+    display: inline-block;
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+	border: none;
+    font-size: 1em;
+	cursor: pointer;
+
+	&.active,
+    &:focus,
+    &:hover
+	{
+        outline: none;
+		opacity: 0.8;
+    }
+}
+
+li a,
+p a
+{
+    display: inline;
+    border-bottom: 1px solid currentColor;
+	
+	&.no_decoration
+	{
+		border: none;
+	}
+	
+    &.active,
+    &:focus,
+    &:hover
+	{
+        opacity: 0.8;
+    }
+}
+
+p svg,
+li svg,
+a svg
+{
+	height: 1em;
+	width: 1em;
+	fill: currentColor;
+	vertical-align: middle;
+	margin-left: 0.2em;
+}

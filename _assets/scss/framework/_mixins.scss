@@ -1,0 +1,119 @@
+/* All size based variables are in PX */
+$max-width: $grid-max-width;
+$gutter: $grid-gutter;
+
+/* Colours */
+$color-link: #323232;
+$color-link-hover: #000000;
+$color-link-light: #959595;
+
+/* small, med and large breakpoints */
+@mixin breakpoint($class)
+{
+	@if $class == sml
+	{
+		@media only screen and (min-width: $bp-sml + 0px) and (min-height (($bp-sml/3) * 2) + 0px) { @content; }
+	}
+	@else if $class == med
+	{
+		@media only screen and (min-width: $bp-med + 0px) and (min-height: (($bp-med/3) * 2) + 0px) { @content; }
+	}
+	@else if $class == lrg
+	{
+		@media only screen and (min-width: $bp-lrg + 0px) and (min-height: ($bp-lrg/2) + 0px) { @content; }
+	}
+	@else if $class == xlrg
+	{
+		@media only screen and (min-width: $bp-lrg-optimal + 200px) and (min-height: ($bp-lrg/2) + 0px) { @content; }
+	}
+	@else
+	{
+		@warn "Breakpoint mixin supports: sml, med, lrg";
+	}
+}
+
+/* converts pixels to em (context sets the current size of the font) */
+@function em($pixels, $context: $grid-rythm)
+{
+	@return #{$pixels/$context}em
+}
+
+/* converts pixels to rem (context sets the current size of the font) */
+@function rem($pixels, $context: $grid-rythm)
+{
+	@return #{$pixels/$context}rem
+}
+
+/* adds px to a number */
+@function px($pixels)
+{
+	@return #{$pixels}px
+}
+
+/* Applies verticle rythm to text lines */
+@mixin typo($font-size: $type-base, $line-height: 0)
+{
+	font-size: em($font-size,$grid-rythm); /* Works out the desired em depending upon the desired font size and the boiler plate font size */
+	/* Works out how many lines need to be taken up for the font size */
+	
+	@if $line-height == 0
+	{
+		$line-height: $grid-rythm * ceil($font-size / $grid-rythm);
+		line-height: em($line-height, $font-size);
+	}
+	@else
+	{
+		line-height: em($line-height, $font-size);
+	}
+	
+	$top: ($line-height / 2) - (($font-size / 100) * 30);
+	
+	padding-top: em($top, $font-size);
+	//padding-top: 0;
+	
+	$padding-bottom: $grid-rythm + 0.1 - $top;
+	
+	@if $padding-bottom < 0
+	{
+		$padding-bottom: ($grid-rythm * 2) + 0.1 - $top;
+	}
+	
+	padding-bottom: em($padding-bottom,$font-size);
+	margin-bottom: em($grid-spacing,$font-size);
+}
+
+// @include prefix(transition, transform 1.5s, webkit ms o);
+@mixin prefix($property, $value, $prefixes: (webkit ms o))
+{
+	@each $prefix in $prefixes
+	{
+		#{'-' + $prefix + '-' + $property}: $value;
+	}
+	
+	// Output standard non-prefixed declaration
+	#{$property}: $value;
+}
+
+// @include gradient(rgb(255,255,255), rgb(0,0,0));
+@mixin gradient( $from, $to )
+{
+    background-color: $from;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,     $from 0%, $to 100%); /* Chrome10+,Safari5.1+ */
+    background:    -moz-linear-gradient(top,     $from 0%, $to 100%); /* FF3.6+ */
+    background:     -ms-linear-gradient(top,     $from 0%, $to 100%); /* IE10+ */
+    background:      -o-linear-gradient(top,     $from 0%, $to 100%); /* Opera 11.10+ */
+    background:         linear-gradient(to bottom, $from 0%, $to 100%); /* W3C */
+}
+
+@mixin lineclamp($line-height,$lines){
+	
+	display: -webkit-box;	
+	max-height: rem(($line-height*$lines)+($grid-rythm*0.5));
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+
+

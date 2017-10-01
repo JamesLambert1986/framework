@@ -1,0 +1,72 @@
+<!-- DATA -->
+{
+	"_cache": "1",
+	"_jquery": "jquery-2.1.4.js",
+	"site_title": "Framework",
+	"site_description": "A short description",
+	"site_share_image": "[Var:path_root]",
+	"site_google_analytics": "",
+	"_content_types": {
+		"page": {
+            "page_type": ["content"]
+		}
+	},
+	"_logo": {
+		"_type": "element",
+		"_name": "svg",
+		"id": "logo"
+	}
+}
+<!-- ENDDATA -->
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+   
+	<!-- IF:page_title==Home -->
+    <title>[Var:site_title] | [Var:site_description]</title>
+    <!-- ELSE:page_title -->
+    <title>[Var:page_title] | [Var:site_title]</title>
+    <!-- ENDIF:page_title -->
+    
+    
+    [meta]
+    
+    <link href="[Var:path_assets]scss/styles.css?cache=[Var:_cache]" media="screen" type="text/css" rel="stylesheet" />
+        
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '[Var:site_google_analytics]', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+    
+</head>
+<body class="[Var:level_1] page--[Var:page_type]" id="top">
+
+	<header>
+		<h2>Header</h2>
+	</header>
+
+    
+	
+    <div class="page" id="page">
+    	[page]
+	</div>
+  	
+  	
+   	<footer>
+		<h2>Footer</h2>
+   	</footer>
+   
+    <script src='[Var:path_assets]js/_jquery/[Var:_jquery]'></script>
+    <script src="[Var:path_assets]js/scripts.js?cache=[Var:_cache]"></script>
+	
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!-- DATA -->
+{
+	"meta_robots": ["index follow","noindex nofollow"],
+	"meta_page_description" : "",
+    "site_contact_address <!-- #fieldtype:textarea -->" : ""
+}
+<!-- ENDDATA -->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+
+<!-- IF:meta_page_description -->
+<meta name="description" content="[Var:meta_page_description]" />
+<!-- ELSE:meta_page_description -->
+<meta name="description" content="[Var:site_description]" />
+<!-- ENDIF:meta_page_description -->
+
+<!-- IF:meta_keywords --><meta name="keywords" content="[Var:meta_keywords]" /><!-- ENDIF:meta_keywords -->
+<meta name="robots" content="[Var:meta_robots]" />
+
+<!-- IF:site_google_token --><meta name="google-site-verification" content="[Var:site_google_token]" /><!-- ENDIF:site_google_token -->
+
+<!-- IF:atom_feed -->
+<link rel="alternate" type="application/atom+xml" title="Codex Atom feed" href="[Var:atom_feed]">
+<!-- ENDIF:atom_feed -->
+
+<!-- AMP URL -->
+<link rel="amphtml" href="[Var:_canonical_url]?amp">
+<link rel="canonical" href="[Var:_canonical_url]">
+
+<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<!-- Client Hints -->
+<meta http-equiv="Accept-CH" content="DPR,Width,Viewport-Width" /> 
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=no" />
+
+<!-- Default Icon -->
+<link rel="shortcut icon" href="[Var:path_assets]favicons/favicon.ico" />
+
+<!-- APP Manifest -->
+<link rel="manifest" href="[Var:path_assets]../manifest.json">
+
+<!-- Apple -->
+<link rel="apple-touch-icon" href="[Var:path_assets]favicons/favicon.png" /> <!-- 144 x 144 -->
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<!-- Windows -->
+<meta name="application-name" content="[Var:site_title]" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="[Var:path_assets]favicons/favicon.png" />
+
+<!-- Android -->
+<meta name="theme-color" content="[Var:style->colour->first]" />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<!-- Twitter Card and Open Gragh -->
+<!-- IF:site_twitter_username -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="[Var:site_twitter_username]" />
+<meta name="twitter:creator" content="[Var:site_twitter_username]" />
+<!-- ENDIF:site_twitter_username -->
+
+<!-- Open Graph -->
+<meta property="og:title" content="[Var:page_title]" />
+
+<!-- IF:meta_page_description -->
+<meta property="og:description" content="[Var:meta_page_description]" />
+<!-- ELSE:meta_page_description -->
+<meta property="og:description" content="[Var:site_description]" />
+<!-- ENDIF:meta_page_description -->
+
+<!-- IF:meta_share_image -->
+<meta property="og:image" content="[Var:meta_share_image]" />
+<!-- ELSE:meta_share_image -->
+<meta property="og:image" content="[Var:site_share_image]" />
+<!-- ENDIF:meta_share_image -->
+
+<!-- FOREACH:_fonts -->
+<link href="[Var:import]" rel="stylesheet">
+<!-- ENDFOREACH:_fonts -->

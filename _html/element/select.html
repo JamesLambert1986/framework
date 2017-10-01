@@ -1,0 +1,58 @@
+<!-- DATA -->
+{
+	"id": "combobox",
+	"label": "Select Field",
+	"options": {
+		"_type": "loop",
+		"_name": "options",
+		"_fields": {
+			"value": "",
+			"title": ""
+		},
+		"_items" : [
+			{
+				"value": "",
+				"title": "Select Item"
+			},
+			{
+				"value": "1",
+				"title": "Item 1"
+			},
+			{
+				"value": "2",
+				"title": "Item 2"
+			},
+			{
+				"value": "3",
+				"title": "Item 3"
+			},
+			{
+				"value": "4",
+				"title": "Item 4"
+			}
+		]
+	},
+	"_validation": "",
+	"_error_msg": ""
+}
+<!-- ENDDATA -->
+
+<!-- IF:label --><label for="[Var:id]">[Var:label]</label><!-- ENDIF:label -->
+
+<div class="select__wrapper icon_right [Var:_validation]">
+	
+	<svg>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="[Var:path_assets]/svg/vectors.svg#down"></use>
+	</svg>
+	
+	<select id="[Var:id]" name="[Var:id]" [attr]>
+		<!-- FOREACH:options->_items -->
+			<option value="[Var:value]">[Var:title]</option>
+		<!-- ENDFOREACH:options->_items -->
+	</select>
+	
+	<!-- IF:_validation -->
+	<!-- IF:_error_msg --><span class="input__msg">[Var:_error_msg]</span><!-- ENDIF:_error_msg -->
+	<!-- ENDIF:_validation -->
+	
+</div>

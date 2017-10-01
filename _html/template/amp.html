@@ -1,0 +1,217 @@
+<!--
+ This is the minimum valid AMP HTML document. Just type away
+ here and the AMP Validator will re-check your document on the fly.
+-->
+<!doctype html>
+<html ⚡>
+<head>
+	<meta charset="utf-8">
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+
+	<!-- IF:page_title==Home -->
+	<title>[Var:site_title] | [Var:site_description]</title>
+	<!-- ELSE:page_title -->
+	<title>[Var:page_title] | [Var:site_title]</title>
+	<!-- ENDIF:page_title -->
+
+
+	<link rel="canonical" href="[Var:_canonical_url]" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+	<!-- Default Icon -->
+	<link rel="shortcut icon" href="[Var:url_path_assets]favicons/favicon.ico" />
+
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+
+
+	<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    
+    <!-- FOREACH:_fonts -->
+	<link rel="stylesheet" href="[Var:import]">
+    <!-- ENDFOREACH:_fonts -->
+    
+    
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "NewsArticle",
+		"mainEntityOfPage": "[Var:canonical_url]",
+		"headline": "[Var:page_title]",
+		"author": {
+			"@type": "Organization",
+			"name": "[Var:site_title]"
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "[Var:site_title]",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "[Var:url_path_assets]favicons/favicon.png"
+			}
+		},
+		"datePublished": "[Var:amp_date]",
+		"dateModified": "[Var:amp_date_modified]",
+		"image": {
+			"@type": "ImageObject",
+			"url": "[Var:amp_image]"
+		}
+	}
+	</script>
+
+
+	<style amp-custom>
+		
+		<!-- IF:_fonts->body -->
+		body {
+			font-family: [Var:_fonts->body->family];
+		}
+		<!-- ENDIF:_fonts->body -->
+		
+		<!-- IF:_fonts->headings -->
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: [Var:_fonts->headings->family];
+		}
+		<!-- ENDIF:_fonts->headings -->
+		
+		
+		
+		
+		
+		.heading {
+			background: #f1f1f1;
+			border-bottom: 1px solid #e0e0e0;
+			min-height: 2rem;
+			padding: 1rem;
+		}
+		
+		.heading svg {
+			height: 2rem;
+    		width: auto;
+			fill: [Var:_style->colour->first];
+		}
+		
+		main {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		h1 {
+			
+		}
+		.clear {
+			opacity: 0;
+		}
+		
+		.share_buttons {
+			
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		
+		.utility_links {
+			
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		.utility_links a {
+			color: $colour-first;
+			color: black;
+			text-decoration: none;
+		}
+		
+		.utility_links a:hover {
+			opacity: 0.5;
+		}
+		
+	</style>
+
+</head>
+<body>
+
+	<div class="heading" id="top">
+	
+	<!-- IF:amp_logo -->
+	[Var:amp_logo]
+	<!-- ELSE:amp_logo -->
+	<h1>[Var:site_title]</h1>
+	<!-- ENDIF:amp_logo -->
+	
+	</div>
+
+	<main>
+		<h1>[Var:page_title]</h1>
+
+		<!-- IF:amp_content -->
+		[Var:amp_content]
+		<!-- ELSE:amp_content -->
+		<p>Content not found</p>
+		<!-- ENDIF:amp_content -->
+		
+	</main>
+	
+	<hr class="clear"/>
+
+	<div class="share_buttons">
+			
+		<h2>Share:</h2>
+
+		<hr class="clear"/>
+		<!-- IF:amp_social_facebook -->
+		<amp-social-share type="facebook" data-param-app_id="254325784911610"></amp-social-share>
+		<!-- ENDIF:amp_social_facebook -->
+
+		<!-- IF:amp_social_twitter -->
+		<amp-social-share type="twitter"></amp-social-share>
+		<!-- ENDIF:amp_social_twitter -->
+
+		<!-- IF:amp_social_linkedin -->
+		<amp-social-share type="linkedin"></amp-social-share>
+		<!-- ENDIF:amp_social_linkedin -->
+
+		<!-- IF:amp_social_gplus -->
+		<amp-social-share type="gplus"></amp-social-share>
+		<!-- ENDIF:amp_social_gplus -->
+
+		<amp-social-share type="email"></amp-social-share>
+
+	</div>	
+	
+	<hr class="clear"/>
+
+	<div class="utility_links">
+			<a href="#top">Top</a>
+			<span>|</span>
+			<a href="[Var:_canonical_url]">View Non-AMP Version</a>
+	</div>	
+	
+
+
+
+<amp-analytics type="googleanalytics">
+<script type="application/json">
+{
+  "vars": {
+	"account": "[Var:site_google_analytics]"
+  },
+  "triggers": {
+	"trackPageview": {
+	  "on": "visible",
+	  "request": "pageview"
+	}
+  }
+}
+</script>
+</amp-analytics>
+
+
+
+
+</body>
+</html>

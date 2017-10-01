@@ -1,0 +1,48 @@
+<!-- DATA -->
+{
+	"title": "",
+	"elements": {
+		"_type": "element_feed",
+		"_name": "elements",
+		"_per_page": "24",
+		"_feed_file": "cta",
+		"_content_types": ["post"],
+		"_wrapper": ["<div class=\"med--3 lrg--4\">","</div>"],
+		"_elements": [
+			{
+				"_type": "element",
+				"_name": "cta",
+				"title": "News 1 with a long ish title blah blah blah mehref erfd",
+				"description": "Lorem article dolor a sit ut amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+			},
+			{
+				"_type": "element",
+				"_name": "cta",
+				"title": "News Article 2"
+			},
+			{
+				"_type": "element",
+				"_name": "cta",
+				"title": "News Article 3"
+			}
+		]
+	},
+	"feed_link": "[Var:path_root]news",
+	"feed_link_title": "View All"
+}
+<!-- ENDDATA -->
+
+<!-- IF:title -->
+<div class="container">
+	<h2>[Var:title]</h2>
+</div>
+<!-- ENDIF:title -->
+
+<div class="container feed">[Var:elements]</div>
+
+
+<!-- IF:feed_link -->
+<div class="container">
+	<a href="[Var:feed_link]" class="btn" title="[Var:feed_link_title]">[Var:feed_link_title]</a>
+</div>
+<!-- ENDIF:feed_link -->

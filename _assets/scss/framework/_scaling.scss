@@ -1,0 +1,53 @@
+@function strip-units($number)
+{
+	@return $number / ($number * 0 + 1);
+}
+
+html
+{
+	font-size: #{($grid-rythm/strip-units($bp-sml-optimal))*100}vw;
+}
+
+// First Breakpoint for Tablets
+@include breakpoint(med)
+{
+	html
+	{
+		font-size: #{($grid-rythm/strip-units($bp-med-optimal))*100}vw;
+	}
+}
+
+// Second Breakpoint for Desktop
+@include breakpoint(lrg)
+{
+	html
+	{
+		font-size: #{($grid-rythm/strip-units($bp-lrg-optimal))*100}vw;
+	}
+}
+
+
+
+$bpMax: $bp-lrg-optimal + (($bp-lrg-optimal / 100) * $bp-lrg-grow);
+$bpMaxFS: $grid-rythm + (($grid-rythm / 100) * $bp-lrg-grow);
+
+// Max 
+@media screen and (min-width: px($bpMax))
+{
+	html
+	{
+		font-size: $bpMaxFS + 0px;
+	}
+}
+
+
+@include breakpoint(med) {
+	@media (min-aspect-ratio: 2/1)
+	{ 
+
+		html
+		{
+			font-size: 1.5vh!important;
+		}
+}
+}

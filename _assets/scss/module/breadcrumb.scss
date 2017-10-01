@@ -1,0 +1,46 @@
+.breadcrumb {
+	
+	padding-top: rem($grid-spacing);
+	padding-bottom: rem($grid-spacing);
+	
+	p {
+		margin-bottom: 0;
+	}
+	
+	.seperator {
+		
+		display: inline-block;
+		padding-left: 0.1em;
+		padding-right: 0.1em;
+	}
+	
+	a {
+		display: inline-block;
+	
+		text-decoration: none;
+		border: none;
+		font-weight: bold;
+		
+		svg {
+			height: 1em;
+			width: 1em;
+			fill: currentColor;
+			vertical-align: baseline;
+			display: inline-block;
+			
+			margin-bottom: -0.05em;
+		}
+
+		
+		&:last-child {
+			font-weight: normal;
+			//color: $colour-first;
+			pointer-events: none;
+			opacity: 0.8;
+			
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

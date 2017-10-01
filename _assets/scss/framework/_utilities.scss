@@ -1,0 +1,22 @@
+/* TO DO 
+text-center - center align text
+center - align items within element in the center
+horizontal-align - horizontally align an element
+vertical-align - vertical align an element
+left - align children to the left
+right - align children to the right
+full-screen - make element full screen
+fixed - make element full width and fixed
+hide-phone - hide elements on a phone
+hide-tablet - hide elements on a tablet
+*/
+
+.text_align_right {
+	text-align: right;
+}
+
+.float_right,
+.container > .float_right {
+	float: right;
+	width: auto;
+}

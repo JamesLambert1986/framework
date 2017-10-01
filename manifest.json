@@ -1,0 +1,14 @@
+{
+  "short_name": "Framework",
+  "name": "Framework - A short description",
+  "start_url": "/framework/?utm_source=homescreen",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "white",
+  "theme_color": "#e6321b",
+  "icons": [{
+      "src": "/framework/_assets/favicons/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }]
+}

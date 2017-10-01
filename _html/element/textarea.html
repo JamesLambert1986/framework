@@ -1,0 +1,20 @@
+<!-- DATA -->
+{
+	"id": "textarea",
+	"label": "Textarea Input",
+	"placeholder": "",
+	"required": ["yes","no"],
+	"_value": "",
+	"_validation": "",
+	"_error_msg": ""
+}
+<!-- ENDDATA -->
+
+<!-- IF:label --><label for="[Var:id]">[Var:label]</label><!-- ENDIF:label -->
+
+<div class="input__wrapper [Var:class]">
+
+	<textarea id="[Var:id]" name="[Var:id]" placeholder="[Var:placeholder]" [attr]>[Var:_value]</textarea>
+    
+	<!-- IF:_error_msg --><span class="input__msg">[Var:_error_msg]</span><!-- ENDIF:_error_msg -->
+</div>

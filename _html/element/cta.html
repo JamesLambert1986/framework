@@ -1,0 +1,23 @@
+<!-- DATA -->
+{
+	"title": "Article title",
+	"description": "Lorem ipsum dolor a sit ut amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+	"image": "[Var:path_assets]img/art.jpg",
+	"url": "[Var:path_root]article"
+}
+<!-- ENDDATA -->
+
+<div class="cta">
+	<!-- IF:image -->
+		<img src="[Var:image]" alt="" />
+	<!-- ENDIF:image -->
+
+	<div class="cta__text">
+
+		<span class="date">[Date:d M Y:_date]</span>
+		<h3>[Var:title]</h3>
+		<p>[Var:description]</p>
+
+		<a href="[Var:url]" class="more">Read more</a>
+	</div>
+</div>

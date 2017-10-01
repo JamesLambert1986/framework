@@ -1,0 +1,43 @@
+{
+	"_template": "default",
+	"page_type": "content",
+	"_jquery": "jquery-2.1.4.js",
+	"_style": {
+		"bp": {
+			"sml": 300,
+			"sml-optimal": 360,
+			"med": 568,
+			"med-optimal": 760,
+			"lrg": 800,
+			"lrg-optimal": 1240,
+			"lrg-grow": 10
+		},
+		"grid": {
+			"max-width": 1240,
+			"gutter": 20,
+			"rythm": 12,
+			"spacing": 24,
+			"sml-cols": 4,
+			"med-cols": 6,
+			"lrg-cols": 12
+		},
+		"colour": {
+			"first": "#e6321b",
+			"second": "#CDD546",
+			"disabled": "#ff0000",
+			"error": "#ff0000"
+		}
+	},
+	"_fonts": {
+		"headings": {
+			"title": "Serif",
+			"type": "default",
+			"family": "serif"
+		},
+		"body": {
+			"title": "Sans Serif",
+			"type": "default",
+			"family": "sans-serif"
+		}
+	}
+}
